@@ -1,0 +1,61 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #70c5ce; /* Latar langit biru */
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+#game-container {
+    width: 400px;
+    height: 600px;
+    border: 3px solid #000;
+    background-color: #4ec0f9; /* Latar game */
+    position: relative;
+    overflow: hidden; /* Penting agar pipa terlihat bergerak */
+}
+
+#bird {
+    width: 40px;
+    height: 30px;
+    background-color: yellow; /* Warna burung */
+    border: 2px solid orange;
+    border-radius: 50%;
+    position: absolute;
+    left: 50px;
+    /* Transisi untuk animasi lompatan yang lebih halus */
+    transition: transform 0.2s ease-out; 
+    z-index: 10;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+    z-index: 20;
+}
+
+.pipe {
+    width: 50px;
+    background-color: green;
+    border: 2px solid darkgreen;
+    position: absolute;
+    right: -50px; /* Mulai dari luar layar */
+    transition: background-color 0.3s; /* Animasi sederhana */
+}
+
+.top-pipe {
+    border-bottom: none;
+}
+
+.bottom-pipe {
+    border-top: none;
+}
